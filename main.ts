@@ -10,16 +10,22 @@ radio.onReceivedNumber(function (receivedNumber) {
             . . . . .
             . . . . .
             `)
-    } else {
-        if (receivedNumber == 2) {
-            basic.showLeds(`
-                . . . . .
-                . . . . .
-                . # # # .
-                . . . . .
-                . . . . .
-                `)
-        }
+    } else if (receivedNumber == 2) {
+        basic.showLeds(`
+            . . . . .
+            . . . . .
+            . # # # .
+            . . . . .
+            . . . . .
+            `)
+    } else if (receivedNumber == 0) {
+        basic.showLeds(`
+            . . . . .
+            . . . . .
+            . . . . .
+            . . . . .
+            . . . . .
+            `)
     }
 })
 /**
@@ -35,6 +41,16 @@ input.onButtonPressed(Button.A, function () {
         . . . . .
         `)
 })
+input.onButtonPressed(Button.AB, function () {
+    radio.sendNumber(0)
+    basic.showLeds(`
+        . . . . .
+        . . . . .
+        . . . . .
+        . . . . .
+        . . . . .
+        `)
+})
 input.onButtonPressed(Button.B, function () {
     radio.sendNumber(2)
     basic.showLeds(`
@@ -45,4 +61,4 @@ input.onButtonPressed(Button.B, function () {
         . . . . .
         `)
 })
-radio.setGroup(1)
+radio.setGroup(123)
