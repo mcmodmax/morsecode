@@ -1,6 +1,3 @@
-/**
- * Lang
- */
 radio.onReceivedNumber(function (receivedNumber) {
     if (receivedNumber == 1) {
         music.playTone(262, music.beat(BeatFraction.Whole))
@@ -30,6 +27,9 @@ radio.onReceivedNumber(function (receivedNumber) {
             `)
     }
 })
+/**
+ * Kurz
+ */
 input.onButtonPressed(Button.A, function () {
     radio.sendNumber(1)
     music.playTone(262, music.beat(BeatFraction.Whole))
@@ -42,7 +42,7 @@ input.onButtonPressed(Button.A, function () {
         `)
 })
 input.onButtonPressed(Button.AB, function () {
-    radio.sendNumber(0)
+    radio.sendNumber(187)
     basic.showLeds(`
         . . . . .
         . . . . .
@@ -51,6 +51,9 @@ input.onButtonPressed(Button.AB, function () {
         . . . . .
         `)
 })
+/**
+ * Lang
+ */
 input.onButtonPressed(Button.B, function () {
     radio.sendNumber(2)
     music.playTone(262, music.beat(BeatFraction.Double))
@@ -62,7 +65,4 @@ input.onButtonPressed(Button.B, function () {
         . . . . .
         `)
 })
-/**
- * Kurz
- */
 radio.setGroup(123)
